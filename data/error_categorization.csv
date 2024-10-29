@@ -1,0 +1,48 @@
+﻿Price or Profit not met,Invalid Status,Out of funds,Network Delay,Invalid Input Parameters,Invalid Input Account,Out of Resource,Program Logic Constraint Violation,Program Runtime Error,Unknown
+Slippage tolerance exceeded,InvalidStatus,insufficient funds,Delay transaction,InvalidInput,Bitmap extension account is not provided,"memory allocation failed, out of memory",A raw constraint was violated,IO Error: Invalid bool representation: 194,x
+IOC order failed to meet minimum fill requirements,Pyth oracle status is not 'trading',Illegal liquidation,Slot expired,"panicked at 'not implemented', libs/mev_chain/src/chain/chain_handler.rs:182:14",Illegal liquidation,exceeded CUs meter at BPF instruction,A mut constraint was violated,"panicked at 'range end index 72 out of range for slice of length 0', src/token.rs:537:39",0x1
+exceeds desired slippage limit,The program expected this account to be already initialized,Insufficient collateral,Stale report,Illegal liquidation,InvalidSplTokenProgram,Computational budget exceeded,A seeds constraint was violated,Exception err,0xdeadbeef
+Slippage error,Account is frozen,insufficient funds for instruction,Current Nonce Mismatch,Provided SqrtPriceLimit not in the same direction as the swap,Not enough account keys given to the instruction,,Player has not requested a result,"panicked at 'range end index 72 out of range for slice of length 0', programs/my-arb-program/src/guards.rs:18:39",X
+NoBestAsk,Fetched oracle price is invalid,Account has sufficient margin,RevertFill,Square root price limit overflow,User token input does not match amm,,Insufficient cargo amount,"panicked at 'assertion failed: mid <= self.len()', programs/dex-interfaces/src/amm/phoenix.rs:20:53",0x1a4
+Balance decreased,Not time to fill,Insufficient amount,Time expired,Too little output received,Missing tickarray bitmap extension account,,,"panicked at 'called `Option::unwrap()` on a `None` value', src/math.rs:433:85",0x0
+Profit rekt,Invalid state,Failed initial margin requirement,The publish time is older than the previous publish time,InvalidMakingAmount,Not enought tick array account,,,"panicked at 'range end index 72 out of range for slice of length 0', library/core/src/slice/index.rs:73:5",panicked at
+Token balance is negative in the end,Could not retrieve updated price feed from the Pyth oracle,,Slot expired,invalid program argument,InvalidTokenAccount,,,"panicked at '', program/src/lib.rs:77:9",Custom program error: 0x2
+Amount out below minimum threshold,There are no tradable amount to swap,,Exceed execution period,"panicked at 'not implemented', libs/mev_chain/src/chain/chain_handler.rs:182:14",Invalid account owner,,,"panicked at 'attempt to multiply with overflow', src/quantities.rs:293:1",0x128
+ExceededSlippage,Swap not supported,,AMMNotUpdatedInSameSlot,Swap input or output amount is too small,IncorrectProgramId,,,"panicked at 'called `Option::unwrap()` on a `None` value', programs/zeta/src/account.rs:1210:57",0x42
+final NUM orig NUM,Oracle confidence is too high,,Max timestamp exceeded,Given pool token amount results in zero trading tokens,Cross-program invocation with unauthorized signer or writable account,,,IO Error: Invalid bool representation: 220,0x22
+Exceeded amount slippage tolerance,User still has active orders,,Expiration time has not been reached,invalid account data for instruction,An unexpected oracle account was provided for the transaction,,,"panicked at 'attempt to subtract with overflow', programs/cargo/src/state/cargo_pod.rs:70:43",0x3b
+NoArbOpportunity,Liquidity insufficient,,,InvalidAccountData,Invalid token mint,,,IO Error: Unexpected variant index: 216,0xd
+Swap instruction exceeds desired slippage limit,"[G120] The price history is too stale, requires more recent updates",,,Failed to serialize or deserialize account data: Unknown,The given account is not owned by the system program,,,"panicked at 'attempt to divide by zero', /home/runner/work/platform-tools/platform-tools/out/rust/library/core/src/num/uint_macros.rs:1248:13",Log truncated
+AskNotCrossed,Stale oracle data,,,An account's data was too small,"panicked at 'called `Result::unwrap()` on an `Err` value: AnchorError(AnchorError { error_name: ""AccountOwnedByWrongProgram"", error_code_number: 3007, error_msg: ""The given account is owned by a different program than expected"", error_origin: None, compared_values: Some(Pubkeys((11111111111111111111111111111111, CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK))) })', src/exchange/raydium_clmm.rs:160:26",,,,0x4
+Nothing to trade,Invalid position state,,,An account's data contents was invalid,The provided token program does not match the token program expected by the swap,,,,Program 11111111111111111111111111111111 success
+ExceededM,OrderNotTriggerable,,,The provided timestamp is not within the expected range,Mint authority is not whitelisted!,,,,OOO
+Fill or kill order was not filled for full size,Cannot liquidate healthy obligations,,,invalid instruction data,,,,,0x3
+The expected profit was not met,User Has No Position In Market,,,Delegated amount is invalid,,,,,0x1111
+BidNotCrossed,Concurrent merkle tree error,,,Exceeded token max,,,,,Custom program error: 0xf417
+"panicked at 'Not a profitable route', src/lib.rs:815:9",Price too old,,,Invalid expiry,,,,,0xc
+NoBestBid,Pricing not up to date,,,Swap special amount can not be zero,,,,,Custom program error: 0x1e
+NoProfit,Both parties need to agree to this sale,,,Input amount is invalid,,,,,0x1779
+"panicked at 'Not a profitable route', src/lib.rs:467:9",order already locked,,,InvalidTakingAmount,,,,,0x2a
+PositionLimitBreached,SpotMarketWrongMutability,,,"panicked at 'ComputeBudgetInstruction::SetComputeUnitLimit must be at least 200000. Value: NUM', programs/sage/src/instructions/survey_data_unit/scan.rs:186:25",,,,,0x2728
+Failed to Place Post-Only Limit Order,The amm account owner is not match with this program,,,Invalid input data,,,,,0xf
+slippage: Too much SOL required to buy the given amount of tokens,Max number of orders taken,,,8 byte discriminator did not match what was expected,,,,,0x1778
+Exceeded slippage tolerance,Trigger order cannot be executed,,,"panicked at 'amount_in is below the threshold value', src/lib.rs:1029:13",,,,,Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 success
+"panicked at 'Not a profitable route', src/lib.rs:1107:9",,,,ZeroSize,,,,,Program Eo7WjKq67rjJQSZxS6z3YkapzY3eMj6Xy8X5EQVn5UaB success
+NoChance,,,,Invalid tick array sequence provided for instruction,,,,,
+Invalid calculation,,,,PerpMarketNotFound,,,,,
+No Profit at the end,,,,TakerOrderNotFound,,,,,
+Token left in vault post swap are lower than expected,,,,Invalid index for tick array sequence,,,,,
+OrderDidNotSatisfyTriggerCondition,,,,Order does not exist,,,,,
+slippage: Too little SOL received to sell the given amount of tokens,,,,Max number of positions taken,,,,,
+Token out for cash based vault swap is below minimum expected,,,,SpotMarketNotFound,,,,,
+,,,,"User is bankrupt, cannot perform risk increasing actions",,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
