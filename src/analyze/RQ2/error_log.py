@@ -174,7 +174,7 @@ def post_handle(error_logs):
     print(f"total error types: {len(res)}")
     print(f"total transactions: {total}")
     temp = 0
-    with open("/data0/xiaoyez/Solana_Ecosystem/src/analyze/RQ2/output_fig/failed_txs.log", 'w') as f:
+    with open("src/analyze/RQ2/output_fig/failed_txs.log", 'w') as f:
         for key, value in res.items():
             count = sum(value.values())
             temp = count/total + temp
@@ -209,7 +209,7 @@ def cals():
     print('='*16)
 
     # read from json file
-    IOC = ast.literal_eval(open("/data0/xiaoyez/Solana_Ecosystem/src/analyze/RQ2/output_fig/IOC_error").read())
+    IOC = ast.literal_eval(open("src/analyze/RQ2/output_fig/IOC_error").read())
     IOC = dict(sorted(IOC.items(), key=lambda item: item[1], reverse=True))
     top_total += cal(error_count = IOC, top2_program = ['ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL', '6Q4Xu2sXxMLMhS2pSBJwhDrL5AMWGbrBT3yaN48kYX7G'])
     print('='*16)

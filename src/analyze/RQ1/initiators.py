@@ -135,7 +135,7 @@ def plot_failed_cdf(failed, success, is_bot):
     ax.yaxis.label.set_size(20)
     ax.title.set_size(20)
     plt.grid(True, linestyle='--', which="major")
-    plt.savefig(f'/data0/xiaoyez/Solana_Ecosystem/src/analyze/RQ1/output_fig/3_{"Bot" if is_bot else "Human"}_failed_count_cdf.png', dpi=300) 
+    plt.savefig(f'src/analyze/RQ1/output_fig/3_{"Bot" if is_bot else "Human"}_failed_count_cdf.png', dpi=300) 
 
 if __name__ == "__main__":
     # get_failed_txs_for_bot_or_human()

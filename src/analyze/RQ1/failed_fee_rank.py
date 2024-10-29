@@ -80,7 +80,7 @@ def plot_cdf_gas_per_cu():
     ax1.set_ylabel('CDF')
     ax1.legend(loc='lower right')
     ax1.grid(True, linestyle='--', which="major")
-    fig1.savefig('/data0/xiaoyez/Solana_Ecosystem/src/analyze/RQ1/output_fig/4_failed_fee_cdf_zoom.png', dpi=300) 
+    fig1.savefig('src/analyze/RQ1/output_fig/4_failed_fee_cdf_zoom.png', dpi=300) 
 
     success_cdfx = np.sort(df_success_fees)
     success_cdfy = np.linspace(1 / len(df_success_fees), 1.0, len(df_success_fees))  
@@ -98,7 +98,7 @@ def plot_cdf_gas_per_cu():
     ax2.set_ylabel('CDF')
     ax2.legend(loc='lower right')
     ax2.grid(True, linestyle='--', which="major")
-    fig2.savefig('/data0/xiaoyez/Solana_Ecosystem/src/analyze/RQ1/output_fig/5_failed_fee_cdf.png', dpi=300) 
+    fig2.savefig('src/analyze/RQ1/output_fig/5_failed_fee_cdf.png', dpi=300) 
 
 def plot_gas_per_cu():
     df_success = df[df['is_failed']==False]
@@ -116,7 +116,7 @@ def plot_gas_per_cu():
     ax2.set_ylabel('Percentage')
     ax2.set_title("Failed Ratio")
     ax2.grid(True, which='both', axis='y', linestyle='--', alpha=0.7) 
-    fig2.savefig('/data0/xiaoyez/Solana_Ecosystem/failed_fee.png', dpi=300) 
+    fig2.savefig('failed_fee.png', dpi=300) 
 
 def plot_cu():
     pass
@@ -150,7 +150,7 @@ def plot_cdf_rank_ratio():
     plt.ylabel('CDF')
     plt.legend(loc='lower right')
     plt.grid(True, linestyle='--', which="major")
-    plt.savefig('/data0/xiaoyez/Solana_Ecosystem/src/analyze/RQ1/output_fig/3_failed_rank_cdf.png', dpi=300) 
+    plt.savefig('src/analyze/RQ1/output_fig/3_failed_rank_cdf.png', dpi=300) 
 
 def plot_distribution_rank():
     myclient = pymongo.MongoClient("mongodb://localhost:27017/")
@@ -185,12 +185,12 @@ def plot_distribution_rank():
     plt.xticks(fontsize=18)
     plt.yticks(fontsize=18)
     # sns.violinplot(data=df, cut=0, scale='width', inner='box')
-    plt.savefig('/data0/xiaoyez/Solana_Ecosystem/src/analyze/RQ1/output_fig/5_rank_violin.png', facecolor='white', dpi=300)
+    plt.savefig('src/analyze/RQ1/output_fig/5_rank_violin.png', facecolor='white', dpi=300)
 
     # plt.figure(figsize=(12, 8))
     # sns.set_style("whitegrid")
     # sns.violinplot(data=df_failed_rank, cut=0, scale='width', inner='box')
-    # plt.savefig('/data0/xiaoyez/Solana_Ecosystem/src/analyze/RQ1/output_fig/5_failed_fee_violin.png', facecolor='white', dpi=200)
+    # plt.savefig('src/analyze/RQ1/output_fig/5_failed_fee_violin.png', facecolor='white', dpi=200)
 
 def print_statistics(df, FILTER_NUM):
     print(f"max failed fee per cu : {max(df)}, min failed fee per cu : {min(df)}")
@@ -223,7 +223,7 @@ def cost_stripplot(df_success, df_failed, cost_type):
                 )
     # sns.violinplot(x='Transactions', y='Fee per CU', data=df, cut=0, inner='box', hue='Transactions', legend=False, palette={'Success': '#1f77b4', 'Failed': '#ff7f0e'})
     # sns.violinplot(data=df, cut=0, scale='width', inner='box')
-    plt.savefig(f'/data0/xiaoyez/Solana_Ecosystem/src/analyze/RQ1/output_fig/10_{cost_type}_strip1.png', facecolor='white', dpi=200)
+    plt.savefig(f'src/analyze/RQ1/output_fig/10_{cost_type}_strip1.png', facecolor='white', dpi=200)
 
 
 def plot_distribution_fee():

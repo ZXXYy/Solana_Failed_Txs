@@ -154,13 +154,13 @@ def get_program_error_statitsics(is_bot):
         json.dump({
             "program": programs,
             "error": error_logs
-        }, open(f"/data0/xiaoyez/Solana_Ecosystem/src/analyze/RQ3/output_fig/{bot}_error_program.json", "w"), indent=4)
+        }, open(f"src/analyze/RQ3/output_fig/{bot}_error_program.json", "w"), indent=4)
     # write  to file
-    json.dump(account2statistic, open(f"/data0/xiaoyez/Solana_Ecosystem/src/analyze/RQ3/output_fig/{"bot" if is_bot else "human"}_error_program.json", "w"), indent=4)
+    json.dump(account2statistic, open(f"src/analyze/RQ3/output_fig/{"bot" if is_bot else "human"}_error_program.json", "w"), indent=4)
     return account2statistic
 
 def error_logs_to_error_types(account2statistic):
-    df_types = pd.read_csv("/data0/xiaoyez/Solana_Ecosystem/src/analyze/RQ2/output_fig/error_categorization.csv")
+    df_types = pd.read_csv("src/analyze/RQ2/output_fig/error_categorization.csv")
     for signer, statistics in account2statistic.items():
         for log in statistics['error']:
             log["error_type"] = "Uncategorized"
@@ -171,8 +171,8 @@ def error_logs_to_error_types(account2statistic):
     return account2statistic
 
 def plot_sankey_diagram():
-    bot_account2statistic = json.load(open(f"/data0/xiaoyez/Solana_Ecosystem/src/analyze/RQ3/output_fig/bot_error.json"))
-    human_account2statistic = json.load(open(f"/data0/xiaoyez/Solana_Ecosystem/src/analyze/RQ3/output_fig/human_error.json"))
+    bot_account2statistic = json.load(open(f"src/analyze/RQ3/output_fig/bot_error.json"))
+    human_account2statistic = json.load(open(f"src/analyze/RQ3/output_fig/human_error.json"))
 
     human_account2statistic = error_logs_to_error_types(human_account2statistic)
     bot_account2statistic = error_logs_to_error_types(bot_account2statistic)
@@ -215,7 +215,7 @@ def plot_sankey_diagram():
     label.extend([signer[:4] for signer in human_account2statistic.keys()])
     node_colors.extend([node_color_plates[i] for i, _ in enumerate(human_account2statistic.keys())])
 
-    df_types = pd.read_csv("/data0/xiaoyez/Solana_Ecosystem/src/analyze/RQ2/output_fig/error_categorization.csv")
+    df_types = pd.read_csv("src/analyze/RQ2/output_fig/error_categorization.csv")
     label.extend(df_types.columns)
     print(df_types.columns)
     node_colors.extend([error_type_color[column] for i, column in enumerate(df_types.columns)])
@@ -285,10 +285,10 @@ def plot_sankey_diagram():
         height=800,
         # hovermode = True
     )
-    fig.write_image(f"/data0/xiaoyez/Solana_Ecosystem/src/analyze/RQ3/output_fig/account_sankey_diagram.png", scale=2) 
+    fig.write_image(f"src/analyze/RQ3/output_fig/account_sankey_diagram.png", scale=2) 
 
 def plot_sankey_diagram_for_account_type(is_bot):
-    account2statistic = json.load(open(f"/data0/xiaoyez/Solana_Ecosystem/src/analyze/RQ3/output_fig/{"bot" if is_bot else "human"}_error.json"))
+    account2statistic = json.load(open(f"src/analyze/RQ3/output_fig/{"bot" if is_bot else "human"}_error.json"))
 
     account2statistic = error_logs_to_error_types(account2statistic)
 
@@ -330,7 +330,7 @@ def plot_sankey_diagram_for_account_type(is_bot):
     label.extend([signer[:4] for signer in account2statistic.keys()])
     node_colors.extend([node_color_plates[i] for i, _ in enumerate(account2statistic.keys())])
 
-    df_types = pd.read_csv("/data0/xiaoyez/Solana_Ecosystem/src/analyze/RQ2/output_fig/error_categorization.csv")
+    df_types = pd.read_csv("src/analyze/RQ2/output_fig/error_categorization.csv")
     label.extend(df_types.columns)
     print(df_types.columns)
     node_colors.extend([error_type_color[column] for i, column in enumerate(df_types.columns)])
@@ -396,10 +396,10 @@ def plot_sankey_diagram_for_account_type(is_bot):
         height=800,
         # hovermode = True
     )
-    fig.write_image(f"/data0/xiaoyez/Solana_Ecosystem/src/analyze/RQ3/output_fig/{"bot" if is_bot else "human"}_sankey_diagram.png", scale=2) 
+    fig.write_image(f"src/analyze/RQ3/output_fig/{"bot" if is_bot else "human"}_sankey_diagram.png", scale=2) 
 
 def patch():
-    account2statistic = json.load(open(f"/data0/xiaoyez/Solana_Ecosystem/src/analyze/RQ3/output_fig/BEmUSjqs7mpgaSXw6QdrePfTsD8aQHbdtnqUxa63La6E_error_program.json"))
+    account2statistic = json.load(open(f"src/analyze/RQ3/output_fig/BEmUSjqs7mpgaSXw6QdrePfTsD8aQHbdtnqUxa63La6E_error_program.json"))
     errors = account2statistic["error"]
     new_errors = defaultdict(int)
     for error in errors:
@@ -410,10 +410,10 @@ def patch():
     print(new_errors)
     account2statistic["error"] = [{"error_log": error, "error_cnt": cnt} for error, cnt in new_errors.items()]   
     print(account2statistic)
-    json.dump(account2statistic, open(f"/data0/xiaoyez/Solana_Ecosystem/src/analyze/RQ3/output_fig/temp.json", "w"), indent=4)
+    json.dump(account2statistic, open(f"src/analyze/RQ3/output_fig/temp.json", "w"), indent=4)
                 
 def cal():
-    account2statistic = json.load(open(f"/data0/xiaoyez/Solana_Ecosystem/src/analyze/RQ3/output_fig/bot_error.json"))
+    account2statistic = json.load(open(f"src/analyze/RQ3/output_fig/bot_error.json"))
     account2statistic = error_logs_to_error_types(account2statistic)
     amm_cnt, invalid_status_cnt  = 0,0
     total = 0

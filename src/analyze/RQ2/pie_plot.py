@@ -99,4 +99,4 @@ plt.axis('equal')
 # Adjust layout to prevent legend cutoff
 plt.tight_layout()
 
-plt.savefig(f'/data0/xiaoyez/Solana_Ecosystem/src/analyze/RQ2/output_fig/pie_error.png', dpi=300) 
+plt.savefig(f'src/analyze/RQ2/output_fig/pie_error.png', dpi=300) 

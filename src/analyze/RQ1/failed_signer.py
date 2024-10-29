@@ -92,7 +92,7 @@ def plot_signer_pie(signers):
     # ax1.set_yticks([])
     ax1.pie(counts, labels=labels, autopct='%1.1f%%', startangle=90)
     ax1.axis('equal')
-    fig1.savefig("/data0/xiaoyez/Solana_Ecosystem/src/analyze/RQ2/output_fig/0_failed_signer_pie.png")
+    fig1.savefig("src/analyze/RQ2/output_fig/0_failed_signer_pie.png")
 
 if __name__ == "__main__":
     start_time = time.time()

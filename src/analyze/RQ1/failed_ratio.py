@@ -194,8 +194,8 @@ def plot_tx_cnt_per_hour(txs):
     # ax2.grid(True, which='both', axis='y', linestyle='--', alpha=0.7) 
     fig2.autofmt_xdate()
     # 显示图表
-    fig1.savefig('/data0/xiaoyez/Solana_Ecosystem/src/analyze/RQ1/output_fig/0_failed_cnt.png', dpi=300) 
-    fig2.savefig('/data0/xiaoyez/Solana_Ecosystem/src/analyze/RQ1/output_fig/1_failed_ratio.png', dpi=300) 
+    fig1.savefig('src/analyze/RQ1/output_fig/0_failed_cnt.png', dpi=300) 
+    fig2.savefig('src/analyze/RQ1/output_fig/1_failed_ratio.png', dpi=300) 
 
 def my_plot_acf(data, is_count=True, lags=24*5):
     fig, ax = plt.subplots(figsize=(12, 6))
@@ -210,7 +210,7 @@ def my_plot_acf(data, is_count=True, lags=24*5):
     for i in range(1, 6):
         plt.axvline(x=24*i, color='red', linestyle='--', alpha=0.5)
 
-    plt.savefig(f"/data0/xiaoyez/Solana_Ecosystem/src/analyze/RQ1/output_fig/2_acf_{out_name}.png", dpi=300)
+    plt.savefig(f"src/analyze/RQ1/output_fig/2_acf_{out_name}.png", dpi=300)
     
 
 def calculate_correlation(txs):

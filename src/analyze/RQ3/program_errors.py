@@ -20,7 +20,7 @@ top_failed_programs = [
 ]
 
 def get_top_failed_program_error_logs():
-    with open(f"/data0/xiaoyez/Solana_Ecosystem/src/analyze/RQ2/output_fig/failed_txs.log", "r") as f:
+    with open(f"src/analyze/RQ2/output_fig/failed_txs.log", "r") as f:
         lines = f.readlines()
         program_to_error_logs = defaultdict(list)
         i = 0
@@ -48,7 +48,7 @@ def get_top_failed_program_error_logs():
     return program_to_error_logs
 
 def error_logs_to_error_types(program_to_error_logs):
-    df_types = pd.read_csv("/data0/xiaoyez/Solana_Ecosystem/src/analyze/RQ2/output_fig/error_categorization.csv")
+    df_types = pd.read_csv("src/analyze/RQ2/output_fig/error_categorization.csv")
     for program_id, logs in program_to_error_logs.items():
         for log in logs:
             log["error_type"] = "Uncategorized"
@@ -97,7 +97,7 @@ def plot_sankey_diagram(program_to_error_types):
     label.extend([program_id[:10] for program_id in program_to_error_types.keys()])
     node_colors.extend([node_color_plates[i] for i, _ in enumerate(program_to_error_types.keys())])
 
-    df_types = pd.read_csv("/data0/xiaoyez/Solana_Ecosystem/src/analyze/RQ2/output_fig/error_categorization.csv")
+    df_types = pd.read_csv("src/analyze/RQ2/output_fig/error_categorization.csv")
     label.extend(df_types.columns)
     print(df_types.columns)
     node_colors.extend([error_type_color[column] for i, column in enumerate(df_types.columns)])
@@ -153,13 +153,13 @@ def plot_sankey_diagram(program_to_error_types):
         height=400,
         # hovermode = True
     )
-    # fig.write_image("/data0/xiaoyez/Solana_Ecosystem/src/analyze/RQ3/output_fig/program_sankey_diagram.pdf", 
+    # fig.write_image("src/analyze/RQ3/output_fig/program_sankey_diagram.pdf", 
     #     width=1200, 
     #     height=800, 
     #     scale=2
     # )
-    fig.write_image("/data0/xiaoyez/Solana_Ecosystem/src/analyze/RQ3/output_fig/program_sankey_diagram.png", scale=2) 
-    # fig.write_html("/data0/xiaoyez/Solana_Ecosystem/src/analyze/RQ3/output_fig/program_sankey_diagram.html")
+    fig.write_image("src/analyze/RQ3/output_fig/program_sankey_diagram.png", scale=2) 
+    # fig.write_html("src/analyze/RQ3/output_fig/program_sankey_diagram.html")
 
 
 def test():

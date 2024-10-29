@@ -26,7 +26,7 @@ def knn_clustering(df_features):
         pca = PCA(n_components=2)
         X_pca = pca.fit_transform(df_features.values) 
         plt.scatter(X_pca[:, 0], X_pca[:, 1], c=y_kmeans, s=50, cmap='viridis')
-        plt.savefig(f'/data0/xiaoyez/Solana_Ecosystem/src/analyze/RQ2/output_fig/1_{num_cluster}_signer_cluster.png')
+        plt.savefig(f'src/analyze/RQ2/output_fig/1_{num_cluster}_signer_cluster.png')
     print(cluster_eval_res)
     return y_kmeans
 

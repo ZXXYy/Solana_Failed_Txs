@@ -242,7 +242,7 @@ def plot_failed_cdf(programs):
     ax.yaxis.label.set_size(18)
     ax.title.set_size(20)
     plt.grid(True, linestyle='--', which="major")
-    plt.savefig(f'/data0/xiaoyez/Solana_Ecosystem/src/analyze/RQ1/output_fig/9_failed_program_cdf.png', dpi=300) 
+    plt.savefig(f'src/analyze/RQ1/output_fig/9_failed_program_cdf.png', dpi=300) 
 
 def get_top_program_success_tx_cnt(top_program_id):
     myclient = pymongo.MongoClient("mongodb://localhost:27017/")
